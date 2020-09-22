@@ -56,11 +56,11 @@ module.exports = (_options = {}) => {
     }
   };
 
-  const FS = (method, args) => {
+  const FS = (method, ...args) => {
     if (Module === null) {
       throw NO_LOAD;
     } else {
-      log('info', `FS.${method} ${args[0]}`);
+      log('info', `FS.${method} ${args.join(' ')}`);
       return Module.FS[method](...args);
     }
   };
